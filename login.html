@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-image: url('https://images.newscientist.com/wp-content/uploads/2020/08/19163900/credit_irina-dmitrienko-_-alamy.jpg?crop=16:9,smart&width=1200&height=675&upscale=true');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: #fff;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .form-container {
+            text-align: center;
+            width: 60%; /* Adjust width as needed */
+            max-width: 400px; /* Set maximum width */
+        }
+
+        h1 {
+            font-size: 80px; /* Increase font size for heading */
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            display: block;
+            width: calc(100% - 40px);
+            padding: 20px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-size: 20px;
+            color: #fff;
+            background-color: #000;
+        }
+
+        .header-link {
+            margin-top: 20px;
+        }
+        .header-link a {
+            display: inline-block;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            background-color: #000;
+            color: #fff;
+            font-size: 20px; /* Adjust font size as needed */
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .header-link a:hover {
+            background-color: #444;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>LOGIN</h1>
+        <form id="loginForm">
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="password" id="password" placeholder="Password" required>
+        </form>
+    </div>
+    <div class="header-link">
+        <a id="submitBtn" href="#">SUBMIT</a>
+    </div>
+
+    <script>
+        document.getElementById('submitBtn').addEventListener('click', function() {
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+
+            if (username.trim() !== '' && password.trim() !== '') {
+                window.location.href = 'header.html';
+            } else {
+                alert('Please fill in both username and password fields.');
+            }
+        });
+    </script>
+</body>
+</html>
